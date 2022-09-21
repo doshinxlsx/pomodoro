@@ -4,13 +4,13 @@ export const CountdownContainer = styled.div`
   font-family: 'Roboto Mono', monospace;
   font-size: 10rem;
   line-height: 8rem;
-  color: white;
+  color: ${(props) => props.theme['brand-100']};
   transition: ease-in-out 0.2s;
   display: flex;
   gap: 1rem;
 
   span {
-    background: black;
+    background: ${(props) => props.theme['panel-700']};
     padding: 2rem 1rem;
     border-radius: 8px;
   }
@@ -29,7 +29,7 @@ export const CountdownContainer = styled.div`
 
 export const Separator = styled.div`
   padding: 2rem 0;
-  color: white;
+  color: ${(props) => props.theme['primary-500']};
   width: 4rem;
   overflow: hidden;
   display: flex;

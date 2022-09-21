@@ -22,7 +22,7 @@ const NewCycleForm = () => {
       <TaskInput
         id='task'
         list='task-suggestion'
-        placeholder='enter project name here'
+        placeholder='project name'
         disabled={!!activeCycle}
         {...register('task')}
       />
