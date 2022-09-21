@@ -1,3 +1,59 @@
 import styled from 'styled-components'
 
-export const HomeContainer = styled.div``
+export const HomeContainer = styled.main`
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5rem;
+  }
+`
+
+export const HomeForm = styled.form``
+
+export const BaseCountdownButton = styled.button`
+  width: 100%;
+  border: 0;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  transition: background 0.2s;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+`
+
+export const StartCountdownButton = styled(BaseCountdownButton)`
+  background: green;
+
+  &:hover:not(:disabled) {
+    background: lightgreen;
+  }
+`
+
+export const StopCountdownButton = styled(BaseCountdownButton)`
+  background: red;
+
+  &:hover:not(:disabled) {
+    background: coral;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+`
