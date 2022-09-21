@@ -1,10 +1,11 @@
 import React from 'react'
+import Header from '../components/header'
 import { LayoutContainer } from './styles'
 
 const Layout = () => {
   return (
     <LayoutContainer>
-      <h2>Layout</h2>
+      <Header />
     </LayoutContainer>
   )
 }
