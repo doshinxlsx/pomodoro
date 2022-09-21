@@ -53,5 +53,6 @@ export const ToggleTheme = styled.button`
 `
 
 export const HeaderLeftContainer = styled.div``
-
 export const HeaderRightContainer = styled.div``
+
+export const Logo = styled.img``

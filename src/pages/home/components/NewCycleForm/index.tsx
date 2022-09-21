@@ -28,10 +28,10 @@ const NewCycleForm = () => {
       />
 
       <CycleDataList id='task-suggestion'>
-        <Option value='Project 1'></Option>
-        <Option value='Project 2'></Option>
-        <Option value='Project 3'></Option>
-        <Option value='Project 4'></Option>
+        <Option value='Soft Skills'></Option>
+        <Option value='Self Discipline'></Option>
+        <Option value='Sloppiness'></Option>
+        <Option value='Endurance'></Option>
       </CycleDataList>
 
       <CycleLabel htmlFor='minutesAmount'>for</CycleLabel>

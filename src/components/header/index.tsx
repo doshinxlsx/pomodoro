@@ -1,7 +1,15 @@
 import React, { useContext } from 'react'
-import { HeaderContainer, HeaderLeftContainer, HeaderRightContainer, ToggleTheme } from './styles'
+import {
+  HeaderContainer,
+  HeaderLeftContainer,
+  HeaderRightContainer,
+  Logo,
+  ToggleTheme,
+} from './styles'
 import { NavLink } from 'react-router-dom'
 import { Timer, Scroll, Sun, Moon } from 'phosphor-react'
+
+import logo from '../../assets/logo.svg'
 import { ThemeContext } from '../../App'
 
 const Header = () => {
@@ -14,7 +22,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderLeftContainer>
-        <p>Logo</p> {/* TODO: Add logo */}
+        <Logo src={logo} />
         {currentTheme === 'dark' ? (
           <ToggleTheme onClick={handleToggleTheme}>
             <Sun size={24} />
