@@ -1,21 +1,39 @@
-import React from 'react'
-import { HeaderContainer, HeaderLeftContainer, HeaderRightContainer } from './styles'
+import React, { useContext } from 'react'
+import { HeaderContainer, HeaderLeftContainer, HeaderRightContainer, ToggleTheme } from './styles'
 import { NavLink } from 'react-router-dom'
-import { Timer, Scroll } from 'phosphor-react'
+import { Timer, Scroll, Sun, Moon } from 'phosphor-react'
+import { ThemeContext } from '../../App'
 
 const Header = () => {
+  const { toggleTheme, currentTheme } = useContext(ThemeContext)
+
+  const handleToggleTheme = () => {
+    toggleTheme()
+  }
+
   return (
     <HeaderContainer>
       <HeaderLeftContainer>
         <p>Logo</p> {/* TODO: Add logo */}
+        {currentTheme === 'dark' ? (
+          <ToggleTheme onClick={handleToggleTheme}>
+            <Sun size={24} />
+          </ToggleTheme>
+        ) : (
+          <ToggleTheme onClick={handleToggleTheme}>
+            <Moon size={24} />
+          </ToggleTheme>
+        )}
       </HeaderLeftContainer>
       <HeaderRightContainer>
-        <NavLink to='/' title='Timer'>
-          <Timer size={24} />
-        </NavLink>
-        <NavLink to='/history' title='History'>
-          <Scroll size={24} />
-        </NavLink>
+        <nav>
+          <NavLink to='/' title='Timer'>
+            <Timer size={24} />
+          </NavLink>
+          <NavLink to='/history' title='History'>
+            <Scroll size={24} />
+          </NavLink>
+        </nav>
       </HeaderRightContainer>
     </HeaderContainer>
   )
