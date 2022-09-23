@@ -5,6 +5,8 @@ export interface Cycle {
   id: string
   task: string
   minutesAmount: number
+  shortBreakAmount?: number
+  longBreakAmount?: number
   startDate: Date
   interruptedDate?: Date
   finishedDate?: Date
