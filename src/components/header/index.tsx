@@ -7,7 +7,7 @@ import {
   ToggleTheme,
 } from './styles'
 import { NavLink } from 'react-router-dom'
-import { Timer, Scroll, Sun, Moon } from 'phosphor-react'
+import { Timer, Scroll, Sun, Moon, Gear } from 'phosphor-react'
 
 import logo from '../../assets/logo.svg'
 import { ThemeContext } from '../../App'
@@ -40,6 +40,9 @@ const Header = () => {
           </NavLink>
           <NavLink to='/history' title='History'>
             <Scroll size={24} />
+          </NavLink>
+          <NavLink to='/settings' title='Settings'>
+            <Gear size={24} />
           </NavLink>
         </nav>
       </HeaderRightContainer>
