@@ -38,7 +38,7 @@ const History = () => {
                 <TableRow key={cycle.id}>
                   <TableColumn>{cycle.task}</TableColumn>
                   <TableColumn>
-                    {cycle.minutesAmount} {cycle.minutesAmount > 1 ? ' minutes' : ' minute'}
+                    {cycle.minutesAmount} {cycle.minutesAmount! > 1 ? ' minutes' : ' minute'}
                   </TableColumn>
                   <TableColumn>
                     {formatDistanceToNow(new Date(cycle.startDate), {

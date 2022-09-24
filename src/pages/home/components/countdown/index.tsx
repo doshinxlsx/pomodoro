@@ -12,7 +12,7 @@ const Countdown = () => {
     setSecondsPassed,
   } = useContext(CycleContext)
 
-  const totalSeconds = activeCycle ? activeCycle?.minutesAmount * 60 : 0
+  const totalSeconds = activeCycle ? activeCycle.minutesAmount! * 60 : 0
   const currentSeconds = activeCycle ? totalSeconds - amountSecondsPassed : 0
 
   const minutesAmount = Math.floor(currentSeconds / 60)

@@ -4,7 +4,7 @@ import { ActionTypes } from './actions'
 export interface Cycle {
   id: string
   task: string
-  minutesAmount: number
+  minutesAmount?: number
   shortBreakAmount?: number
   longBreakAmount?: number
   startDate: Date

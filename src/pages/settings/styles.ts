@@ -15,14 +15,8 @@ export const SettingsContainer = styled.div`
 
 export const SettingsTitle = styled.h1``
 
-export const BreaksContainer = styled.div`
+export const BreakForm = styled.form`
   display: flex;
   flex-direction: column;
-  margin: auto;
   gap: 15px;
 `
-
-export const ShortBreakTitle = styled.h3``
-export const LongBreakTitle = styled.h3``
-
-export const MinutesAmountInput = styled.input``

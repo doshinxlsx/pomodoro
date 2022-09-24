@@ -16,7 +16,7 @@ export const HomeContainer = styled.main`
   }
 `
 
-export const HomeForm = styled.form``
+export const CycleForm = styled.form``
 
 export const BaseCountdownButton = styled.button`
   width: 100%;

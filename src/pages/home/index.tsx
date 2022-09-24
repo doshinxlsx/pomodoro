@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { HomeContainer, HomeForm, StartCountdownButton, StopCountdownButton } from './styles'
+import { HomeContainer, CycleForm, StartCountdownButton, StopCountdownButton } from './styles'
 import { HandPalm, Play } from 'phosphor-react'
 import { FormProvider, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -43,7 +43,7 @@ const Home = () => {
 
   return (
     <HomeContainer>
-      <HomeForm onSubmit={handleSubmit(handleCreateNewCycle)}>
+      <CycleForm onSubmit={handleSubmit(handleCreateNewCycle)}>
         <FormProvider {...newCycleForm}>
           <NewCycleForm />
         </FormProvider>
@@ -60,7 +60,7 @@ const Home = () => {
             Start
           </StartCountdownButton>
         )}
-      </HomeForm>
+      </CycleForm>
     </HomeContainer>
   )
 }

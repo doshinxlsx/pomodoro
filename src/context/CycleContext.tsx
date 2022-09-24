@@ -11,7 +11,9 @@ import { Cycle, cyclesReducer } from '../reducers/cycles/reducer'
 
 interface CreateCycleData {
   task: string
-  minutesAmount: number
+  minutesAmount?: number
+  shortBreakAmount?: number
+  longBreakAmount?: number
 }
 
 interface CycleContextProviderProps {
@@ -26,6 +28,8 @@ interface CycleContextType {
   markCurrentCycleAsFinished: () => void
   setSecondsPassed: (seconds: number) => void
   createNewCycle: (data: CreateCycleData) => void
+  createNewShortBreakCycle: (data: CreateCycleData) => void
+  createNewLongBreakCycle: (data: CreateCycleData) => void
   interruptCurrentCycle: () => void
 }
 
@@ -93,6 +97,34 @@ export const CyclesContextProvider = ({ children }: CycleContextProviderProps) =
     setAmountSecondsPassed(0)
   }
 
+  const createNewShortBreakCycle = (data: CreateCycleData) => {
+    const id = String(new Date().getTime())
+
+    const newShortBreakCycle: Cycle = {
+      id,
+      task: 'Short break',
+      minutesAmount: data.shortBreakAmount,
+      startDate: new Date(),
+    }
+
+    dispatch(addNewCycleAction(newShortBreakCycle))
+    setAmountSecondsPassed(0)
+  }
+
+  const createNewLongBreakCycle = (data: CreateCycleData) => {
+    const id = String(new Date().getTime())
+
+    const newLongBreakCycle: Cycle = {
+      id,
+      task: 'Long break',
+      minutesAmount: data.longBreakAmount,
+      startDate: new Date(),
+    }
+
+    dispatch(addNewCycleAction(newLongBreakCycle))
+    setAmountSecondsPassed(0)
+  }
+
   const interruptCurrentCycle = () => {
     dispatch(interruptCurrentCycleAction())
 
@@ -109,6 +141,8 @@ export const CyclesContextProvider = ({ children }: CycleContextProviderProps) =
         amountSecondsPassed,
         setSecondsPassed,
         createNewCycle,
+        createNewShortBreakCycle,
+        createNewLongBreakCycle,
         interruptCurrentCycle,
       }}
     >
